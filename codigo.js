@@ -3,7 +3,7 @@ var fechaCompleta = fecha.getTime()
 var fechaAñoNacimiento = new Date("2007,1,28,00:00");
 var fechaEdadA = document.getElementById("fecha")
 var edad = parseInt((fechaCompleta - fechaAñoNacimiento) / (1000 * 60 * 60 *24 * 365));
-document.getElementById("fecha").innerHTML = edad
+document.getElementById("fecha").innerHTML = "<strong>" + edad + "</strong>"
 var seccion1 = document.getElementById("seccion1")
 var seccion2 = document.getElementById("seccion2")
 var seccion3 = document.getElementById("seccion3")
@@ -39,8 +39,8 @@ function boton1E(event) {
           diaContador++;
           mediaNoche.setDate(mediaNoche.getDate() + 1);
         }
-        dia.innerHTML = diaContador + " dias ";
-        reloj.innerHTML = fecha.toLocaleTimeString('en-US', {hour12: false})  + " HORAS"
+        dia.innerHTML = diaContador + "<strong> dias </strong>";
+        reloj.innerHTML = "<strong>" + fecha.toLocaleTimeString('en-US', {hour12: false})  + " HORAS</strong>"
       }, 1000);
       
     console.log(edad)
