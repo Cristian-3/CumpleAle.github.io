@@ -41,7 +41,7 @@ function boton1E(event) {
     setInterval(function() {
         fechaActual = new Date();
         var reloj = document.getElementById("reloj");
-        dia.innerHTML = diaContador + "<strong> dias </strong>";
+        dia.innerHTML = "<strong>" + diaContador + " dias </strong>";
         reloj.innerHTML = "<strong>" + fechaActual.toLocaleTimeString("en-US", { hour12: false }) + " HORAS</strong>";
     }, 1000);
       
