@@ -141,7 +141,8 @@ button.opacity:hover {
     color: #33006F;
     font-size: 15px;
     padding: 20px;
-    width: 80%;
+    width: 70%;
+    max-width: 400px;
 }
 
 #hbd {
