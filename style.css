@@ -175,3 +175,8 @@ button.opacity:hover {
     border: 7px double #33006F;
     filter: blur(0.3px);
 }
+
+#regresar {
+    display: flex;
+    align-items: center;
+}
