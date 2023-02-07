@@ -146,7 +146,11 @@ button.opacity:hover {
 }
 
 #hbd {
-    color: #000;
+    border-radius: 15px;
+    background-color: #EE82EE;
+    color: #33006F;
+    font-size: 15px;
+    padding: 5px;
 }
 
 #video {
