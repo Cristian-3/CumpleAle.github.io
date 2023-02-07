@@ -27,23 +27,25 @@ titulo.style.display = ''
 
 function boton1E(event) {
     event.preventDefault();
-    var mediaNoche = new Date();
-    mediaNoche.setHours(0, 0, 0, 0);
-    var hourDifference = (fecha - mediaNoche) / (1000 * 60 * 60);
+    var fechaActual = new Date();
+    var fechaInicio = new Date(fechaActual.getFullYear(), 0, 28);
     var diaContador = 0;
-    setInterval(function(){ 
-        var fecha = new Date();
+
+    if (fechaActual >= fechaInicio) {
+        diaContador = Math.floor((fechaActual - fechaInicio) / (1000 * 60 * 60 * 24));
+    } else {
+        fechaInicio.setFullYear(fechaInicio.getFullYear() - 1);
+        diaContador = Math.floor((fechaActual - fechaInicio) / (1000 * 60 * 60 * 24));
+    }
+
+    setInterval(function() {
+        fechaActual = new Date();
         var reloj = document.getElementById("reloj");
-        var hourDifference = (fecha - mediaNoche) / (1000 * 60 * 60);
-        if (hourDifference >= 24) {
-          diaContador++;
-          mediaNoche.setDate(mediaNoche.getDate() + 1);
-        }
         dia.innerHTML = diaContador + "<strong> dias </strong>";
-        reloj.innerHTML = "<strong>" + fecha.toLocaleTimeString('en-US', {hour12: false})  + " HORAS</strong>"
-      }, 1000);
+        reloj.innerHTML = "<strong>" + fechaActual.toLocaleTimeString("en-US", { hour12: false }) + " HORAS</strong>";
+    }, 1000);
       
-    console.log(edad)
+    console.log()
     seccion1.style.display = ''
     boton1.style.display = 'none'
     boton2.style.display = 'none'
